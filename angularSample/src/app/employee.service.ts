@@ -13,14 +13,14 @@ export class EmployeeService {
   constructor( private http : HttpClient) { }
 
   getEmployeeById( id :number) :Observable<any>{
-    return this.http.get('${this.baseUrl}/${id}');
+    return this.http.get(this.baseUrl+"/"+id);
   }
   getEmployeesList() : Observable<any>{
     return this.http.get(this.baseUrl);
   }
 
   deleteEmployee(id :number) :Observable<any>{
-    return this.http.delete('${this.baseUrl}/${id}');
+    return this.http.delete(this.baseUrl+"/"+id);
   }
 
   createEmployee(employee : Object) :Observable<Object>{
